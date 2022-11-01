@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react"
 import { fetchAllArticles } from "../api"
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
-const ArticleList =()=>{
+const ArticleList =({topic})=>{
     const[articles, setArticles] = useState([])
 
 
     useEffect(()=>{
-        fetchAllArticles().then((data)=>{
+        fetchAllArticles(topic).then((data)=>{
             setArticles(data.articles)
         })
-    }, [])
+    }, [topic])
     
     return (
         <div className="Articles">
