@@ -10,3 +10,9 @@ export const fetchAllArticles =()=>{
         return res.data
     })
 }
+
+export const fetchAllTopics =()=>{
+    return marketApi.get("/topics").then((res)=>{
+        return res.data
+    })
+}

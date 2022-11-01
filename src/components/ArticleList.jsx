@@ -11,12 +11,12 @@ const ArticleList =()=>{
             setArticles(data.articles)
         })
     }, [])
-    console.log(articles)
+    
     return (
         <div className="Articles">
             <ul>
                 {articles.map((article)=>{
-                return(<li className="articleCard"><Link key={article.article_id} to = {`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
+                return(<li key={article.article_id} className="articleCard"><Link to = {`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
                 <h4>Posted by {article.author}</h4>
                 <h4>Topic: {article.topic}</h4>
                 </li>
