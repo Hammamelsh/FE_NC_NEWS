@@ -6,8 +6,6 @@ const SingleArticle = () =>{
     const [articleCard, setArticleCard] =useState({})
     const[isLoading, setIsLoading] = useState(true)
     const[votes,setVotes] = useState(0)
-    const[upVoted, setUpVoted] = useState(false)
-    const[downVoted, setDownVoted] = useState(false)
     
     const{article_id} = useParams()
 
@@ -35,8 +33,6 @@ const SingleArticle = () =>{
              setIsLoading(false) 
         })
     }, [article_id])
-    console.log(articleCard.created_at)
-    console.log(articleCard.votes)
     
     const splitDate =(string)=>{
         
