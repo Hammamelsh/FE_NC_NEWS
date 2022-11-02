@@ -23,3 +23,17 @@ export const fetchArticleById = (article_id)=>{
         return res.data
     })
 }
+
+export const incrementArticleById =(article_id) =>{
+    return ncNewsApi.patch(`articles/${article_id}`,{inc_votes : 1}).then((res)=> {
+        return res.data
+    })
+
+}
+
+export const DecrementArticleById =(article_id) =>{
+    return ncNewsApi.patch(`articles/${article_id}`,{inc_votes : -1}).then((res)=> {
+        return res.data
+    })
+
+}
