@@ -16,3 +16,10 @@ export const fetchAllTopics =()=>{
         return res.data
     })
 }
+
+export const fetchArticleById = (article_id)=>{
+
+    return ncNewsApi.get(`articles/${article_id}`).then((res)=> {
+        return res.data
+    })
+}
