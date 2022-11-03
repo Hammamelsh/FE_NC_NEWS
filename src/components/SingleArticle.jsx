@@ -10,11 +10,9 @@ const SingleArticle = () =>{
     const{article_id} = useParams()
 
 
-    
-   
     const voteCount =()=>{
         incrementArticleById(article_id)
-        setVotes(Number(votes+1))
+        setVotes(votes+1)
     }
     const decVote = () => {
 
@@ -34,6 +32,7 @@ const SingleArticle = () =>{
         })
     }, [article_id])
     
+    
     const splitDate =(string)=>{
         
        let newDate = string.split("T")[0];
@@ -41,7 +40,6 @@ const SingleArticle = () =>{
        return newDate
     }
     
-
     return (
         <div>{isLoading ? <p> ...loading </p> : <section className="article">
          <h3>{articleCard.title}</h3>
@@ -49,16 +47,17 @@ const SingleArticle = () =>{
         <p>{articleCard.body}</p>
         <h4>Posted by {articleCard.author}</h4>
         <p> Date : {splitDate(articleCard.created_at)}</p>
-        <h5>Votes: {votes+articleCard.votes}</h5>
+        <h5>newVotes: {votes+articleCard.votes}</h5>
         <button className="btn" type="button" onClick={decVote}>-</button>
     
        
-        <button className="btn" type="button" onChange={handleChange} onClick={voteCount}>+</button>
+        <button className="btn" type="button" onClick={voteCount}>+</button>
 
         </section>}</div>
         
         
        
     )
+
 }
 export default SingleArticle

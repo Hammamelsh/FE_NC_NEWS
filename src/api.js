@@ -37,3 +37,9 @@ export const DecrementArticleById =(article_id) =>{
     })
 
 }
+
+export const getComments = (article_id) =>{
+    return ncNewsApi.get(`articles/${article_id}/comments`).then((res)=> {
+        return res.data
+    })
+}
