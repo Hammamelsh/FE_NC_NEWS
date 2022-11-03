@@ -33,7 +33,7 @@ return (
                 return (
                     
                     <li className="comment"
-                    key={comment.article_id}
+                    key={comment.comment_id}
                     >
                     <br></br>
                     <h3>Comment Section:</h3>
