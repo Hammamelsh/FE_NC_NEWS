@@ -28,15 +28,17 @@ if (isLoading) return <p>Loading...</p>;
 
 return (
     <div className="commentSection">
-        <ul >
+        <ul > 
+            <br></br>
+            <h3 className="comment-header">Comment Section:</h3>
             {comments.map((comment)=>{
                 return (
                     
                     <li className="comment"
                     key={comment.comment_id}
                     >
-                    <br></br>
-                    <h3>Comment Section:</h3>
+                   <br></br>
+                    
                     <h4>{comment.author} commented</h4>
                    
                     <p>{comment.body}</p>
