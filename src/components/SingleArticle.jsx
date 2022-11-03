@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { fetchArticleById, incrementArticleById, DecrementArticleById } from "../api"
+import ViewComments from "./ViewComments"
 
 const SingleArticle = () =>{
     const [articleCard, setArticleCard] =useState({})
@@ -52,6 +53,8 @@ const SingleArticle = () =>{
     
        
         <button className="btn" type="button" onClick={voteCount}>+</button>
+
+        <ViewComments />
 
         </section>}</div>
         
