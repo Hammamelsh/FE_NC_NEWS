@@ -112,8 +112,12 @@ a {
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.85);
   background-color: #f9f9f9;
+  padding: 20px;
 }
 
 .comment-header{
+  text-align: left;
+}
+.name{
   text-align: left;
 }

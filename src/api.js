@@ -43,3 +43,16 @@ export const getComments = (article_id) =>{
         return res.data
     })
 }
+
+export const postComments = (article_id, body) =>{
+    console.log(body)
+    return ncNewsApi.post(`articles/${article_id}/comments`, body).then((res)=> {
+        return res.data
+    })
+}
+
+export const getUsers =()=>{
+    return ncNewsApi.get(`/users`).then((res)=>{
+        return res.data;
+    })
+}
