@@ -5,8 +5,8 @@ const ncNewsApi = axios.create({
 })
 
 
-export const fetchAllArticles =(topic)=>{
-    return ncNewsApi.get("/articles", {params: {topic}}).then((res)=>{
+export const fetchAllArticles =(topic, sort_by, order)=>{
+    return ncNewsApi.get("/articles", {params: {topic, sort_by,order}}).then((res)=>{
         return res.data
     })
 }
@@ -41,5 +41,18 @@ export const DecrementArticleById =(article_id) =>{
 export const getComments = (article_id) =>{
     return ncNewsApi.get(`articles/${article_id}/comments`).then((res)=> {
         return res.data
+    })
+}
+
+export const postComments = (article_id, body) =>{
+    console.log(body)
+    return ncNewsApi.post(`articles/${article_id}/comments`, body).then((res)=> {
+        return res.data
+    })
+}
+
+export const getUsers =()=>{
+    return ncNewsApi.get(`/users`).then((res)=>{
+        return res.data;
     })
 }
